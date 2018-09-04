@@ -1,0 +1,49 @@
+# CompareFilesContent
+
+from difflib import SequenceMatcher
+#import difflib
+
+def match(seq):					#method for returning the percentage matched by comparing with two files
+	percentage=round(seq.ratio()*100,2)	#round is used to retrieve the required number of decimal digits
+	return percentage
+	
+
+def main():
+	
+	t1 = open("text1.txt","r").read()
+	t2 = open("text2.txt","r").read()
+	t3 = open("text3.txt","r").read()
+	t4 = open("text4.txt","r").read()
+	t5 = open("text5.txt","r").read()
+	 
+	per = match(SequenceMatcher(None,t1,t2))	 	#invoking match function to get the percentage
+	print(str(per)+"% match for text1 with text2\n")
+ 
+	per = match(SequenceMatcher(None,t1,t3))		
+	print(str(per)+"% match for text1 and text3\n")
+
+	per = match(SequenceMatcher(None,t1,t4))		
+	print(str(per)+"% match for text1 and text3\n")
+
+	per = match(SequenceMatcher(None,t1,t5))
+	print(str(per)+"% match for text1 and text3\n")
+
+	per = match(SequenceMatcher(None,t2,t3))
+	print(str(per)+"% match for text1 and text3\n")
+
+	per = match(SequenceMatcher(None,t2,t4))
+	print(str(per)+"% match for text1 and text3\n")
+
+	per = match(SequenceMatcher(None,t2,t5))
+	print(str(per)+"% match for text1 and text3\n")
+
+	per = match(SequenceMatcher(None,t3,t4))
+	print(str(per)+"% match for text1 and text3\n")
+
+	per = match(SequenceMatcher(None,t3,t5))
+	print(str(per)+"% match for text1 and text3\n")
+
+	per = match(SequenceMatcher(None,t4,t5))
+	print(str(per)+"% match for text1 and text3\n")
+	
+main()
