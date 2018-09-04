@@ -47,3 +47,5 @@ def main():
 	print(str(per)+"% match for text1 and text3\n")
 	
 main()
+
+//close file
